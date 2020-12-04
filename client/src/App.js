@@ -4,16 +4,68 @@ import './App.css';
 import React, { Component } from 'react'
 import Signup from './components/Signup'
 import { Route, Switch } from 'react-router-dom';
+import Login from './components/Login';
+import AuthService from './services/authService';
+import Navbar from './components/Navbar';
+import Homepage from './components/Homepage/Homepage';
+import Dashboard from './components/Pages/Dashboard';
+
+
+
 
 export default class App extends Component {
+  state = {
+    loggedInUser: null
+  }
+
+  service = new AuthService()
+
+  componentDidMount() {
+    this.service.loggedin()
+    .then(user => {
+      this.setState({
+        loggedInUser: user
+      })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+  
+  getTheUser = user => {
+    this.setState({
+      loggedInUser: user
+    })
+  }
   render() {
     return (
       <div className="App">
+        {/* <Navbar getTheUser={this.getTheUser}/> */}
+        <div>
+        {this.state.loggedInUser && (
+          <div>
+            {`Hello ${this.state.loggedInUser.username}, welcome back!`}
+          
+           
+          </div>
+        )}
 
       <Switch>
+
+        <Route exact  path='/homepage' render={()=> <Navbar getTheUser={this.getTheUser}/>}/>
+        <Route exact path='/' component={Homepage}/>
         <Route exact path='/signup' component={Signup}/>
-      </Switch>
+        <Route exact path ='/login' render={()=>
+        <Login getTheUser={this.getTheUser}/>
+        }/>
+        <Route exact path='/dashboard' component={Dashboard}/>
         
+       
+        
+        
+
+      </Switch>
+      </div>
       </div>
     )
   }
