@@ -36,7 +36,7 @@ app.use(cookieParser());
 
 
 app.use(session({
-  secret: 'myspecialsecret',
+  secret:'mysecretproject',
   store: new Mongostore({
     mongooseConnection: mongoose.connection
   }),

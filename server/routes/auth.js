@@ -3,8 +3,7 @@ const router = express.Router()
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const bcryptSalt = 10
-const multer = require('multer');
-const upload = multer({dest:'public/uploads'});
+
 
 
 router.post('/signup', async (req,res) => {
@@ -101,22 +100,7 @@ router.get('/loggedin',(req,res)=> {
     }
 })
 
-router.post('/upload',upload.single('uploads'),(req,res)=> {
-    if(!req.session.user) {
-        return res.status(401).json({message:'user not logged'});
-    }
 
-    const {username} = req.session.user;
-
-    User.updateOne({username:username},{imageUrl:req.file.filename})
-    .then((response)=>{
-        res.status(200).json(response);
-    })
-    .catch((err)=> {
-        console.log(err);
-        res.status(500).json({message:'Something went wrong'})
-    })
-})
 
 
 

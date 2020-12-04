@@ -37,10 +37,7 @@ class AuthService {
         .then(response=> response.data)
     }
 
-    imageUpload = (img) => {
-        return this.service.post('/auth/profile',img)
-        .then((response)=>response.data)
-    }
+  
 }
 
 
