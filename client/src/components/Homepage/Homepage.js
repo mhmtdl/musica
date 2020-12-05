@@ -23,7 +23,7 @@ export default class Homepage extends Component {
         return (
             
             <div className="dark-overlay " style={divStyle}>
-             <Navbar/>
+              <Navbar/> 
               <div className="inner">
                 <div class="container">
                   <div class="row landing-row d-flex">

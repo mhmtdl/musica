@@ -8,7 +8,7 @@ export default class Albums extends Component {
    
    state = {
        albums : [],
-       visiable: 10,
+       visiable: 6,
       
    };
 
@@ -28,7 +28,7 @@ export default class Albums extends Component {
 
   loadmore = () => {
       this.setState({
-          visiable: this.state.visiable + 10
+          visiable: this.state.visiable + 6
       })
   }
   
@@ -40,22 +40,28 @@ export default class Albums extends Component {
         return (
             <div className='albums-container'>
 
-              
-                <div className='list' >
+                <div><h5>Independent Albums</h5></div>
+
+                
+                <div className='row shadow-lg p-3 mb-5 bg-white rounded' >
+
+                
                
                {arrayToFilter.slice(0,this.state.visiable).map((album)=>(
                    <div key={album.id}
-                   className='album-container'>
+                   className='col-md-4'>
                    <div className='album-image'>
-                   <h4>{album.name}</h4>
-                   <h4> {album.artist_name}</h4>
-                      <img src={album.image} alt={album.name}/>
-                      <h4>{album.tracks}</h4>
+
+                
+                   
+                   
+                      <img src={album.image} alt={album.name} className='rounded-circle'/>
+                      <p>by {album.artist_name}</p>
                      
-                     <div>
+                     {/* <div>
                          <Link to={`/albums/${album.id}/${album.name}`}><h4>{album.name}</h4></Link>
                         
-                     </div> 
+                     </div>  */}
                     
                     
                      
@@ -64,8 +70,11 @@ export default class Albums extends Component {
 
                 ))}
             </div>
-            <div>
-                <button type= 'button' onClick={this.loadmore}>More Albums</button>
+            <hr/>
+            <div className='col-md-12'>
+            
+                <button type= 'button' onClick={this.loadmore} className={'btn btn-sm btn-primary'}>More Albums</button>
+                
             </div>
 
                 

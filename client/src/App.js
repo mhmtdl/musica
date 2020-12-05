@@ -9,6 +9,8 @@ import AuthService from './services/authService';
 import Navbar from './components/Navbar';
 import Homepage from './components/Homepage/Homepage';
 import Dashboard from './components/Pages/Dashboard';
+//import Searchbar from './components/Pages/Searchbar';
+
 
 
 
@@ -59,6 +61,7 @@ export default class App extends Component {
         <Login getTheUser={this.getTheUser}/>
         }/>
         <Route exact path='/dashboard' component={Dashboard}/>
+        {/* <Searchbar getSearchTerm={this.getSearchTerm} /> */}
         
        
         
