@@ -4,12 +4,16 @@ import Albums from './Albums'
 import Searchbar from './Searchbar'
 import './Dashboard.css';
 import axios from 'axios';
+//import Navbar from '../Navbar';
 
 
 
 export default class Dashboard extends Component {
+   
     
-     state = {
+    
+    
+    state = {
          albums: [],
          searchValue:"",
          
@@ -42,11 +46,14 @@ export default class Dashboard extends Component {
       }
     
     render() {
-        console.log(this.state.albums)
+       // console.log(this.state.albums)
         const filteredList = this.state.albums.filter(item => {
              if( item.musicinfo && item.musicinfo.tags.includes(this.state.searchValue)) {
-                 return item
-             }
+                 return item;
+             }else {
+                 return false
+             } 
+             
              
             
             // if(this.state.searchValue===""){
@@ -56,7 +63,7 @@ export default class Dashboard extends Component {
             //     .includes(this.state.searchValue.toLowerCase())
             // }
         })
-        console.log(filteredList)
+       // console.log(filteredList)
       
       
       
@@ -64,13 +71,19 @@ export default class Dashboard extends Component {
            
            
             
-            <div className='dashboard-container'>
+            <div className='dashboard-container '>
+            <div>
+                
+               
+            </div>
             <div>
             <Searchbar getSearchTerm={this.getSearchTerm}/>
             </div>
 
            <div>
+           
            <Albums filteredList={filteredList} albums={this.state.albums}/>
+           
            </div>
             {/* <div><Tracks/></div> */}
            

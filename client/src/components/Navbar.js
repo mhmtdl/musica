@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
-import AuthService from '../services/authService' 
+import AuthService from '../services/authService'
+
+
 
 export default class Navbar extends Component {
      
@@ -17,6 +19,8 @@ export default class Navbar extends Component {
 
         })
     }
+
+  
    
    
     render() {
@@ -26,6 +30,7 @@ export default class Navbar extends Component {
 <Link to='/'>Musica</Link>
 
  
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -39,9 +44,9 @@ export default class Navbar extends Component {
       <Link to='/login'>Login</Link>
       </li>
       <li class="nav-item ">
-      <li class="nav-item ">
+      {/* <li class="nav-item ">
       <Link to='/logout' onClick={this.logout}>Logout</Link>
-      </li>
+      </li> */}
       </li>
      
     </ul>
