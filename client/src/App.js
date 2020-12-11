@@ -10,6 +10,10 @@ import Navbar from './components/Navbar';
 import Homepage from './components/Homepage/Homepage';
 import Dashboard from './components/Pages/Dashboard';
 //import Searchbar from './components/Pages/Searchbar';
+import Albumdetails from './components/Pages/Albumdetails'
+import AlbumList from './components/Pages/AlbumList';
+
+
 
 
 
@@ -24,33 +28,34 @@ export default class App extends Component {
 
   componentDidMount() {
     this.service.loggedin()
-    .then(user => {
+    .then((user) => {
       this.setState({
-        loggedInUser: user
+        loggedInUser: user,
       })
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err)
     })
   }
   
-  getTheUser = user => {
+  getTheUser = (user) => {
     this.setState({
       loggedInUser: user
     })
   }
   render() {
+    console.log(this.state.loggedInUser,'gojj')
     return (
       <div className="App">
-        {/* <Navbar getTheUser={this.getTheUser}/> */}
+         {/* <Navbar getTheUser={this.getTheUser}/>  */}
         <div>
-        {this.state.loggedInUser && (
+        {/* {this.state.loggedInUser && (
           <div>
             {`Hello ${this.state.loggedInUser.username}, welcome back!`}
           
            
           </div>
-        )}
+        )} */}
 
       <Switch>
 
@@ -62,7 +67,20 @@ export default class App extends Component {
         }/>
         <Route exact path='/dashboard' component={Dashboard}/>
         {/* <Searchbar getSearchTerm={this.getSearchTerm} /> */}
-        
+         {/* <Route exact path='/albums/:id' component={Albumdetails}/> */}
+         <Route
+            exact
+            path="/albums/:id"
+            render={(props) => <Albumdetails{...props} loggedInUser={this.state.loggedInUser} />}
+          />
+         {/* <Route exact path='/albumlist' component={AlbumList}/> */}
+         <Route
+            exact
+            path="/albumlist"
+            render={(props) => <AlbumList{...props} loggedInUser={this.state.loggedInUser} />}
+          />
+
+       
        
         
         

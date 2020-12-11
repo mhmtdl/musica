@@ -47,11 +47,11 @@ export default class Searchbar extends Component {
     render() {
         return (
             <div className='search'>
-             <nav class="navbar navbar-light bg-light">
+             <nav className="navbar navbar-light bg-light">
              <Link to='/dashboard'>Musica</Link>
             
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search genre......." aria-label="Search" onChange={this.handleChange}/>
+  <form className="form-inline">
+    <input className="form-control mr-sm-2" type="search" placeholder="Search genre......." aria-label="Search" onChange={this.handleChange}/>
     <Link to='/' onClick={this.logout}>Logout</Link>
 
    </form>
