@@ -48,7 +48,7 @@ export default class Dashboard extends Component {
     render() {
        // console.log(this.state.albums)
         const filteredList = this.state.albums.filter(item => {
-             if( item.musicinfo && item.musicinfo.tags.includes(this.state.searchValue)) {
+             if( item.musicinfo && item.musicinfo.tags.includes(this.state.searchValue) ||item.name.toLowerCase() === this.state.searchValue.toLowerCase()) {
                  return item;
              }else {
                  return false
@@ -85,7 +85,7 @@ export default class Dashboard extends Component {
            <Albums filteredList={filteredList} albums={this.state.albums}/>
            
            </div>
-            {/* <div><Tracks/></div> */}
+             {/* <div><Albumdetails/></div> */}
            
            
                 

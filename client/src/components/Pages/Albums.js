@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 //import ReactPaginate from 'react-paginate'
 import './Albums.css'
+//import axios from 'axios';
+//import Albumdetails from './Albumdetails'
 
 export default class Albums extends Component {
    
@@ -10,7 +12,11 @@ export default class Albums extends Component {
        albums : [],
        visiable: 6,
       
+      
+      
    };
+
+ 
 
    
 
@@ -31,6 +37,7 @@ export default class Albums extends Component {
           visiable: this.state.visiable + 6
       })
   }
+
   
 
     render() {
@@ -40,7 +47,7 @@ export default class Albums extends Component {
         return (
             <div className='albums-container'>
 
-                <div><h5>Independent Albums</h5></div>
+                <div><h6>Independent Albums</h6></div>
 
                 
                 <div className='row shadow-lg p-3 mb-5 bg-white rounded' >
@@ -57,11 +64,13 @@ export default class Albums extends Component {
                    
                       <img src={album.image} alt={album.name} className='rounded-circle'/>
                       <p>by {album.artist_name}</p>
+                      
                      
-                     {/* <div>
-                         <Link to={`/albums/${album.id}/${album.name}`}><h4>{album.name}</h4></Link>
+                       <div>
+                          <Link to={`/albums/${album.id}`}><p>{album.name}</p></Link> 
+                         {/* <Albumdetails/> */}
                         
-                     </div>  */}
+                     </div>   
                     
                     
                      
@@ -76,6 +85,7 @@ export default class Albums extends Component {
                 <button type= 'button' onClick={this.loadmore} className={'btn btn-sm btn-primary'}>More Albums</button>
                 
             </div>
+           
 
                 
             </div>
