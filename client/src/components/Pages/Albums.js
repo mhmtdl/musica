@@ -59,15 +59,15 @@ export default class Albums extends Component {
                    className='col-md-4'>
                    <div className='album-image'>
 
-                
+                  
                    
                    
-                      <img src={album.image} alt={album.name} className='rounded-circle'/>
+                   <Link to={`/albums/${album.id}`}><img src={album.image} alt={album.name} className='rounded-circle'/> </Link> 
                       <p>by {album.artist_name}</p>
                       
                      
                        <div>
-                          <Link to={`/albums/${album.id}`}><p>{album.name}</p></Link> 
+                          {/* <Link to={`/albums/${album.id}`}><p>{album.name}</p></Link>  */}
                          {/* <Albumdetails/> */}
                         
                      </div>   

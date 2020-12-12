@@ -16,7 +16,7 @@ export default class AlbumList extends Component {
     axios.get('http://localhost:5000/user/'+id)
     .then(response=> {
         
-        console.log(response,'response')
+        console.log(response,'')
         this.setState({
          user:response.data
         })
@@ -26,19 +26,19 @@ export default class AlbumList extends Component {
     })
 }
 
-componentWillReceiveProps(nextProps) { 
-    console.log('new props coming', nextProps)
-     if(this.props.loggedInUser !== nextProps.loggedInUser){
-        console.log('list') 
-        this.displaylist()
-     }
-    }
+// componentWillReceiveProps(nextProps) { 
+//     console.log('new props coming', nextProps)
+//      if(this.props.loggedInUser !== nextProps.loggedInUser){
+//         console.log('list') 
+//         this.displaylist()
+//      }
+//     }
 
-// componentDidMount() {
-//     this.displaylist()
+componentDidMount() {
+    this.displaylist()
   
 
-// }
+}
 
 //       componentDidMount() {
 //         const playlist= {id:this.props.loggedInUser._id}
@@ -49,6 +49,21 @@ componentWillReceiveProps(nextProps) {
 
 //        })
 //    }
+
+
+
+ removelist = (albumId) => {
+    axios.post('http://localhost:5000/removeplaylist',{id:this.state.user._id,albumId})
+    .then(response=>{
+        
+        console.log(response)
+        this.displaylist()
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+
+ }
    
    
     render() {
@@ -61,6 +76,24 @@ componentWillReceiveProps(nextProps) {
        
         return (
             <div>
+
+            {this.state.user.playlist.map(album=>{
+                return (
+                 <div><p>{album.name}</p>
+                 
+                 <button onClick={()=>this.removelist(album.id)}>Remove</button>
+                 
+                 </div>
+
+                ) 
+            
+                
+            })}
+
+                
+                
+                
+                
                 {/* <ul>
         {this.state.album.map(person => <li>{person.artist_name}</li>)}
       </ul> */}

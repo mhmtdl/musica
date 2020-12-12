@@ -25,6 +25,27 @@ router.post('/addplaylist',(req,res)=> {
 
 })
 
+
+
+
+router.post('/removeplaylist',(req,res)=> {
+ 
+  console.log(req.body)
+  User.findByIdAndUpdate(req.body.id,
+   
+    {$pull:{playlist:{id:req.body.albumId}}}
+   )
+  
+  .then(response=>{
+    res.status(200).json(response)
+    
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+
+})
+
 router.get('/user/:id',(req,res)=> {
   
   User.findById({_id:req.params.id})

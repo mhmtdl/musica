@@ -45,6 +45,11 @@ export default class App extends Component {
   }
   render() {
     console.log(this.state.loggedInUser,'gojj')
+    
+    if(!this.state.loggedInUser){
+      return <p>loading</p>
+    }
+   
     return (
       <div className="App">
          {/* <Navbar getTheUser={this.getTheUser}/>  */}
