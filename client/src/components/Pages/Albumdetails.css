@@ -1,0 +1,92 @@
+/* .details-container {
+    display:flex;
+    margin-left:80px;
+    
+   
+} */
+
+/* .albumName-container {
+    padding-top: 100px;
+} */
+
+ .flex-container {
+    display:flex;
+    vertical-align: baseline;
+    margin:20px;
+    padding:40px;
+    border-bottom: 1px solid;
+} 
+
+ /* .flex-container > div {
+    margin: 10px;
+    padding:20px;
+    
+}  */
+
+ .cont {
+  display: flex;
+  padding-top:60px;
+  
+
+}
+
+ .album-image {
+    border-radius: 50%
+}
+
+.button-details {
+    margin-left: 40px;
+    padding-top:10px;
+    
+}
+
+.playlist-button {
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    
+}
+
+.playlist-button:hover {
+   background-color:rgb(255, 81, 0);
+   color:white;
+}
+
+
+/* .tracks-image {
+    
+    border-radius: 90%;
+}   */
+
+/* .tracks-list {
+    list-style: none;
+} */
+
+ .tracks-container {
+    display:flex;
+    vertical-align: baseline;
+    margin:20px;
+    padding:40px;
+    background-color: rgba(128, 139, 60, 0.418);
+} 
+
+/* .tracks {
+    display:flex;
+} */
+
+/* .audio {
+    width:320%;
+   
+} */
+
+
+.d-flex {
+    margin-left:155vh;
+}
+
+.navbar-nav {
+   margin-left: 20px;
+}
+
+.nav-item {
+    margin-left:20px;
+}
