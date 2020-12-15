@@ -58,32 +58,33 @@ addPlaylist = (album) => {
   
   
   <div>
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <div className="container-fluid ">
-    <Link to='/albumlist'>Myalbumlist</Link>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-        
-         <Link to='/dashboard'>Home</Link>
-         
-        </li>
-        {/* <li className="nav-item">
-         <Link to='/albumlist'>Myalbumlist</Link>
-        </li> */}
-        
-        
-      </ul>
-      <form className="d-flex">
-       
-       <Link to='/' onClick={this.logout}>Logout</Link>
-        
-      </form>
-    </div>
+    <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<Link to='/dashboard'>Musica</Link>
+
+ 
+
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
+  <div className="collapse navbar-collapse " id="navbarNav">
+    <ul className="navbar-nav ml-auto pr-1 ">
+     
+      <li className="nav-item">
+      <Link to='/albumlist'>Myalbumlist</Link>
+      </li>
+      
+      <li className="nav-item ">
+      <Link to='/' onClick={this.logout}>Logout</Link>
+      </li>
+      
+     
+    </ul>
   </div>
 </nav>
-  
-  
+               
+            </div>
+
   
   <div className='flex-container'>
     <div><img className='album-image' src={this.state.album.image} alt={this.state.album.name}/></div>
@@ -92,18 +93,18 @@ addPlaylist = (album) => {
   by {this.state.album.artist_name}</div></div>
  
             <div className='button-details'>
-                <button className='playlist-button' onClick={()=>this.addPlaylist(this.state.album)}>Add to playlist</button>
+                <button className='playlist-button' onClick={()=>this.addPlaylist(this.state.album)}>Add to albumlist</button>
             </div>
             </div>
             </div>
             
            
-  {/* <hr></hr> */}
+  
   <div className='tracks-container'>
  
   <h6>{ this.state.album.tracks && this.state.album.tracks.map((trc)=>(
                             <div key={trc.id}>
-                            {/* <img src={this.state.album.image} className='tracks-image' alt={trc.name}/> */}
+                          
                            
                             
                                {trc.name}
@@ -121,24 +122,10 @@ addPlaylist = (album) => {
                             </div>
                         ))}</h6>
                         </div>
-{
-    
-    
-    
-    /* 
-            {this.state.albums.map((alb)=>(
-                <div key={alb._id}>
-                    <div>
-                        
-                        <h5>{alb.name}</h5>
-                        
-                        
-                    </div>
-                </div>
-            ))} */}
+
             
             <div>
-                {/* <AlbumList/> */}
+                
             </div>
 
             </div>

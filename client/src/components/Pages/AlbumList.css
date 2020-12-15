@@ -1,0 +1,53 @@
+ .albumlist {
+     display: flex;
+    vertical-align: baseline;
+    margin:20px;
+    padding:40px;
+    
+ }
+
+
+ .albumtracks {
+    display:flex;
+    vertical-align: baseline;
+    margin:20px;
+    padding:40px;
+    background-color: rgba(1, 5, 14, 0.493);
+ }
+
+ .bas {
+    display: flex;
+    padding-top:60px;
+ }
+
+ .name {
+     margin-left:10px;
+ }
+
+ .aname {
+     margin-left:10px;
+ }
+
+ .button-remove {
+     padding-top:10px;
+ }
+
+ .remove-list {
+    transition-duration: 0.4s;
+    border-radius: 4px;
+ }
+
+ .remove-list:hover {
+    background-color:rgb(255, 51, 0);
+    color:white;
+ }
+
+.more-tracks {
+    transition-duration: 0.4s;
+    border-radius: 4px;
+   
+}
+.more-tracks:hover {
+    background-color:rgb(0, 255, 85);
+    color:white;
+}

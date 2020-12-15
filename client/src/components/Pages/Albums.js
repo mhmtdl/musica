@@ -47,7 +47,7 @@ export default class Albums extends Component {
         return (
             <div className='albums-container'>
 
-                <div><h6>Independent Albums</h6></div>
+                {/* <div><h6>Independent Albums</h6></div> */}
 
                 
                 <div className='row shadow-lg p-3 mb-5 bg-white rounded' >
@@ -62,7 +62,8 @@ export default class Albums extends Component {
                   
                    
                    
-                   <Link to={`/albums/${album.id}`}><img src={album.image} alt={album.name} className='rounded-circle'/> </Link> 
+                   <Link to={`/albums/${album.id}`}><img src={album.image} alt={album.name} className='img'/> </Link>
+                      <p>{album.name}</p> 
                       <p>by {album.artist_name}</p>
                       
                      

@@ -2,3 +2,10 @@
     display: flex;
     justify-content: space-evenly;
 } */
+
+.img {
+  width:38%;
+  border-radius: 8px;
+ }
+
+ 

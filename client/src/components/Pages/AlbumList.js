@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import './AlbumList.css'
+import {Link} from 'react-router-dom';
 
 export default class AlbumList extends Component {
    
    state = {
-       user: null
+       user: null,
+       visiable:1,
    }
 
 
@@ -13,7 +16,7 @@ export default class AlbumList extends Component {
     
     const id = this.props.loggedInUser ? this.props.loggedInUser._id : null
     console.log(id)
-    axios.get('http://localhost:5000/user/'+id)
+    axios.get(process.env.REACT_APP_SERVER_URL +'/user/'+id)
     .then(response=> {
         
         console.log(response,'')
@@ -40,6 +43,13 @@ componentDidMount() {
 
 }
 
+
+load = () => {
+    this.setState({
+        visiable:this.state.visiable + 3
+    })
+}
+
 //       componentDidMount() {
 //         const playlist= {id:this.props.loggedInUser._id}
 //         axios.get('http://localhost:5000/addplaylist',playlist)
@@ -53,7 +63,7 @@ componentDidMount() {
 
 
  removelist = (albumId) => {
-    axios.post('http://localhost:5000/removeplaylist',{id:this.state.user._id,albumId})
+    axios.post(process.env.REACT_APP_SERVER_URL+'/removeplaylist',{id:this.state.user._id,albumId})
     .then(response=>{
         
         console.log(response)
@@ -70,33 +80,114 @@ componentDidMount() {
         console.log(this.props.loggedInUser,'user')
        
         if(!this.state.user){
-            return <p>oing...</p>
+            return <p>Loading...</p>
         }
         
        
         return (
             <div>
 
+<div>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+<Link to='/dashboard'>Musica</Link>
+
+ 
+
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
+  <div className="collapse navbar-collapse " id="navbarNav">
+    <ul className="navbar-nav ml-auto pr-1 ">
+     
+      <li className="nav-item">
+      <Link to='/albumlist'>Myalbumlist</Link>
+      </li>
+      
+      <li className="nav-item ">
+      <Link to='/' onClick={this.logout}>Logout</Link>
+      </li>
+      
+     
+    </ul>
+  </div>
+</nav>
+               
+            </div>
+
+
+
+            
             {this.state.user.playlist.map(album=>{
                 return (
-                 <div><p>{album.name}</p>
+                 <div key={album._id}>
+                  
+                 <div  className='albumlist' >
                  
-                 <button onClick={()=>this.removelist(album.id)}>Remove</button>
+                 <img src={album.image}alt={album.name}/>
+                 <div>
+                 
+                
+                 
+                 
+                
+                <div className='bas'>
+                <div className='aname'>
+
+                  {album.name}
+                 </div>
+                 <div className='name'>
+                 
+                by  {album.artist_name}
                  
                  </div>
+                 </div>
+                 <div className='button-remove'>
+                 <button className='remove-list' onClick={()=>this.removelist(album.id)}>Remove</button>
+                 </div>
+                 </div>
+                 </div>
+               
+                 
+                 
+                <div className='albumtracks'>
+                 <p>{album.tracks.slice(0,this.state.visiable).map((tx)=>(
+                    <div key={tx._id}>
+                    <div>{tx.name}
+                    <div>
+                    <audio 
+                                ref='audio_tag'
+                                autoPlay={false}
+                                controls={true}>
+                                <source type='audio/ogg'src={tx.audio}/>
 
+                                </audio>
+                                </div>
+                    </div> 
+                    
+                    </div>
+                    
+                 ))}</p>
+                
+                 </div>
+                
+                 
+                <button  type= 'button' onClick={this.load} className=' more-tracks btn btn-sm btn-primary'>More Tracks</button>
+                
+                
+                
+                 
+                </div>
+                
                 ) 
-            
+                
                 
             })}
 
+            
                 
                 
                 
-                
-                {/* <ul>
-        {this.state.album.map(person => <li>{person.artist_name}</li>)}
-      </ul> */}
+            
             </div>
         )
     }
