@@ -24,7 +24,7 @@ export default class Login extends Component {
         email:'',
         password:'',
         errorMsg:'',
-        redirect:false
+        // redirect:false
     }
 
     service = new AuthService()
@@ -93,7 +93,7 @@ export default class Login extends Component {
               <label>Password</label>
                <input type='password' name='password' placeholder='********' class='form-control' value={this.state.password} onChange={this.onChangeHandler}></input>
               </div>
-               <button><Link to='/dashboard'>Login</Link></button>
+              <Link to='/dashboard'>Login</Link>
 
             </form>
             {this.state.errorMsg} 

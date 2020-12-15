@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import Navbar from '../Navbar';
 
 
+
 let imgUrl = '/images/musica-homepage.jpg';
 const divStyle= {
     backgroundImage:'url('+imgUrl+')',
@@ -24,6 +25,7 @@ export default class Homepage extends Component {
             
             <div className="dark-overlay " style={divStyle}>
               <Navbar/> 
+             
               <div className="inner">
                 <div class="container">
                   <div class="row landing-row d-flex">

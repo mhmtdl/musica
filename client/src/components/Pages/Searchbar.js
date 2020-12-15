@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 //import axios from 'axios';
- //import AuthService from '../services/authService'
+// import AuthService from '../services/authService'
  import {Link} from 'react-router-dom';
+//import AuthService from '../../services/authService';
  import './Searchbar.css';
 
 
@@ -48,18 +49,18 @@ export default class Searchbar extends Component {
     render() {
         return (
             <div className='search'>
-             <nav className="navbar navbar-light bg-light">
+             {/* <nav className="navbar navbar-light bg-light">
              <Link to='/dashboard'>Musica</Link>
            
              <Link to='/dashboard'>Home</Link>
-             <Link to='/albumlist'>Myalbumlist</Link>
+             <Link to='/albumlist'>Myalbumlist</Link> */}
            
-  <form className="form-inline">
-    <input className="form-control mr-sm-2" type="search" placeholder="Search genre&&albums......." aria-label="Search" onChange={this.handleChange}/>
-    <Link to='/' onClick={this.logout}>Logout</Link>
-
+  <form className="form-inline justify-content-center ">
+    <input className="form-control mr-sm-2 " type="search" placeholder="Search independent albums && genres......." aria-label="Search" onChange={this.handleChange}/>
+    {/* <Link to='/' onClick={this.logout}>Logout</Link> */}
+    
    </form>
-   </nav>
+   {/* </nav> */}
                 
             </div>
         )
@@ -70,6 +71,5 @@ export default class Searchbar extends Component {
 
 
 
- {/* <input id='searchbar' type='text' name='search' placeholder='Search genre.....'  onChange={this.handleChange}/> */}
- {/* <input type='submit' value='Search'/> */}
+
 
