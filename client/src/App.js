@@ -57,13 +57,7 @@ export default class App extends Component {
       <div className="App">
          {/* <Navbar getTheUser={this.getTheUser}/>  */}
         <div>
-        {/* {this.state.loggedInUser && (
-          <div>
-            {`Hello ${this.state.loggedInUser.username}, welcome back!`}
-          
-           
-          </div>
-        )} */}
+        
 
       <Switch>
 
