@@ -27,9 +27,7 @@ export default class Homepage extends Component {
            
               {/* <Navbar/>  */}
              
-              <div className="inner">
-                <div class="container">
-                  <div class="row landing-row d-flex">
+             
                     <div className="hero">
 
                     <h1>Where words fail, music speaks.</h1>
@@ -47,9 +45,7 @@ export default class Homepage extends Component {
                            
                       {/* </div> */}
                     
-                  </div>
-                </div>
-              </div>
+                
               
             </div>
             
