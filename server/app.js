@@ -51,7 +51,7 @@ app.use(cors({
 )
 
 
-// Express View engine setup
+
 
 app.use(require('node-sass-middleware')({
   src:  path.join(__dirname, 'public'),
