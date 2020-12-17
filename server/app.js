@@ -15,7 +15,7 @@ const cors = require('cors')
 
 
 mongoose
-  .connect('mongodb://localhost/server', {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true})
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
