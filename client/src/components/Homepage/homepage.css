@@ -1,2 +1,27 @@
+.hero {
+    padding-top:30vh;
+    text-align:center;
+    padding-right:20vw;
+}
 
+.hero a {
+    font-size:16px;
+    background-color:white;
+    padding:8px 15px;
+    border-radius:4px;
+    margin-top:20px;
+    display:inline-block;
+   
+}
+.hero a:hover {
+    text-decoration:none;
+}
+
+
+
+@media(min-width: 968px) {
+    .hero {
+        padding-right:40vw;
+    }
+}
 
