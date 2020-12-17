@@ -83,7 +83,7 @@ export default class Albums extends Component {
             <hr/>
             <div className='col-md-12'>
             
-                <button type= 'button' onClick={this.loadmore} className={'btn btn-sm btn-primary'}>More Albums</button>
+                <button type= 'button' onClick={this.loadmore} className='btn btn-sm btn-primary mr-5'>More Albums</button>
                 
             </div>
            

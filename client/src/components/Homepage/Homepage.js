@@ -2,7 +2,7 @@
 import {Link} from 'react-router-dom';
 import './homepage.css';
 import React, { Component } from 'react'
-import Navbar from '../Navbar';
+//import Navbar from '../Navbar';
 
 
 
@@ -11,7 +11,7 @@ const divStyle= {
     backgroundImage:'url('+imgUrl+')',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
-    height: '95.5vh',
+    height: '100vh',
     color: 'white',
    
     
@@ -24,7 +24,8 @@ export default class Homepage extends Component {
         return (
             
             <div className="dark-overlay " style={divStyle}>
-              <Navbar/> 
+           
+              {/* <Navbar/>  */}
              
               <div className="inner">
                 <div class="container">

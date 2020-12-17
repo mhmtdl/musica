@@ -62,18 +62,18 @@ export default class Signup extends Component {
               <form onSubmit={this.handleFormSubmit}>
                <div className='form-group'>
                    <label>Username</label>
-                   <input type='text' name='username' class='form-control' placeholder='username' value={this.state.username} onChange={this.handleChange}></input>
+                   <input type='text' name='username' className='form-control' placeholder='username' value={this.state.username} onChange={this.handleChange}></input>
                    </div>
                    <div className='form-group'>
                    <label>Email</label>
-                  <input type='email' name='email' class='form-control' value={this.state.email} onChange={e=>this.handleChange(e)} placeholder='Your email'></input>
+                  <input type='email' name='email' className='form-control' value={this.state.email} onChange={e=>this.handleChange(e)} placeholder='Your email'></input>
                   </div>
                    <div className='form-group'>
                   <label>Password</label>
-                   <input type='password' name='password' placeholder='********' class='form-control' value={this.state.password} onChange={this.handleChange}></input>
+                   <input type='password' name='password' placeholder='********' className='form-control' value={this.state.password} onChange={this.handleChange}></input>
                   </div>
                   <input type='submit' value='Create account'/>
-                  <p>Already have account?<Link to={'/login'}>Login</Link></p>
+                  <p>Already have account?<Link to='/login'>Login</Link></p>
                 </form>
                
                 

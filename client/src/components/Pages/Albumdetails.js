@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 //import AlbumList from './AlbumList'
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import './Albumdetails.css';
+import Navbar from '../Navbar';
 
 
 
@@ -58,7 +59,9 @@ addPlaylist = (album) => {
   
   
   <div>
-    <div>
+
+     <Navbar/>
+    {/* <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <Link to='/dashboard'>Musica</Link>
 
@@ -83,7 +86,7 @@ addPlaylist = (album) => {
   </div>
 </nav>
                
-            </div>
+            </div> */}
 
   
   <div className='flex-container'>

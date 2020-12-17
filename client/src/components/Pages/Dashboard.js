@@ -7,7 +7,7 @@ import axios from 'axios';
 
 //import Navbar from '../Navbar';
 import {Link} from 'react-router-dom';
-//import Navbar from '../Navbar';
+import Navbar from '../Navbar';
 
 
 
@@ -75,9 +75,10 @@ export default class Dashboard extends Component {
            
             
             <div className='dashboard-container '>
+            
 
-            {/* <Navbar/> */}
-            <div>
+            <Navbar/>
+            {/* <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
 <Link to='/dashboard'>Musica</Link>
 
@@ -102,7 +103,7 @@ export default class Dashboard extends Component {
   </div>
 </nav>
                
-            </div>
+            </div> */}
 
            
             {/* <div>

@@ -6,7 +6,7 @@ import Signup from './components/Signup'
 import { Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import AuthService from './services/authService';
-import Navbar from './components/Navbar';
+//import Navbar from './components/Navbar';
 import Homepage from './components/Homepage/Homepage';
 import Dashboard from './components/Pages/Dashboard';
 //import Searchbar from './components/Pages/Searchbar';
@@ -21,7 +21,8 @@ import AlbumList from './components/Pages/AlbumList';
 
 export default class App extends Component {
   state = {
-    loggedInUser: null
+    loggedInUser: null,
+    loading: false
   }
 
   service = new AuthService()
@@ -31,10 +32,12 @@ export default class App extends Component {
     .then((user) => {
       this.setState({
         loggedInUser: user,
+        loading:true
       })
     })
     .catch((err) => {
       console.log(err)
+      this.setState({loading:true})
     })
   }
   
@@ -46,9 +49,9 @@ export default class App extends Component {
   render() {
     console.log(this.state.loggedInUser,'gojj')
     
-    if(!this.state.loggedInUser){
-      return <p>loading</p>
-    }
+    if(!this.state.loading){
+       return <p>loading</p>
+     }
    
     return (
       <div className="App">
@@ -64,7 +67,7 @@ export default class App extends Component {
 
       <Switch>
 
-        <Route exact  path='/homepage' render={()=> <Navbar getTheUser={this.getTheUser}/>}/>
+        {/* <Route exact  path='/homepage' render={()=> <Navbar getTheUser={this.getTheUser}/>}/> */}
         <Route exact path='/' component={Homepage}/>
         <Route exact path='/signup' component={Signup}/>
         <Route exact path ='/login' render={()=>

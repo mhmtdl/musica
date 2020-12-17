@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import './AlbumList.css'
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
+import Navbar from '../Navbar';
 
 export default class AlbumList extends Component {
    
@@ -86,8 +87,10 @@ load = () => {
        
         return (
             <div>
-
-<div>
+            <Navbar/>
+           
+            
+{/* <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
 <Link to='/dashboard'>Musica</Link>
 
@@ -112,7 +115,7 @@ load = () => {
   </div>
 </nav>
                
-            </div>
+            </div> */}
 
 
 

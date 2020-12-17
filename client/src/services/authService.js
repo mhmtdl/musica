@@ -19,6 +19,7 @@ class AuthService {
     login = (username,email,password)=>{
         return this.service.post('/auth/login',{username,email,password})
         .then(response=>response.data)
+
     }
 
     edit = (username,email)=> {

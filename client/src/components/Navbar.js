@@ -12,7 +12,7 @@ export default class Navbar extends Component {
         this.service.logout()
         .then(response => {
             console.log(response)
-            this.props.getTheUser(null)
+            // this.props.getTheUser(null)
         })
         .catch(err => {
             console.log(err)
@@ -26,30 +26,31 @@ export default class Navbar extends Component {
     render() {
         return (
             <div>
-           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<Link to='/'>Musica</Link>
+            
+           <nav className="navbar navbar-expand-lg navbar-light bg-light">
+           <div className='container-fluid'>
+<Link to='/dashboard'>Musica</Link>
 
  
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse " id="navbarNav">
-    <ul class="navbar-nav ml-auto pr-1 ">
+  <div className="collapse navbar-collapse " id="navbarNav">
+    <ul className="navbar-nav ml-auto pr-1 ">
      
-      <li class="nav-item">
-      <Link to='/signup'>Signup</Link>
+      
+      <li className="nav-item ">
+      <Link to='/albumlist'>Myalbumlist</Link>
       </li>
-      <li class="nav-item ">
-      <Link to='/login'>Login</Link>
+      
+      <li className="nav-item ">
+      <Link to='/' onClick={this.logout}>Logout</Link>
       </li>
-      <li class="nav-item ">
-      <li class="nav-item ">
-      <Link to='/login' onClick={this.logout}>Logout</Link>
-      </li>
-      </li>
+      
      
     </ul>
+  </div>
   </div>
 </nav>
 

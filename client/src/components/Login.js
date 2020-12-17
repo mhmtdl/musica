@@ -24,7 +24,7 @@ export default class Login extends Component {
         email:'',
         password:'',
         errorMsg:'',
-        // redirect:false
+        redirect:false
     }
 
     service = new AuthService()
@@ -38,12 +38,16 @@ export default class Login extends Component {
 
     submitHandler = e => {
         e.preventDefault()
+        console.log('go')
         this.service.login(this.state.username,this.state.email,this.state.password)
         .then(user=> {
             console.log(user)
             this.props.getTheUser(user)
             this.setState({
-                redirect:true
+                redirect:true,
+                username:'',
+                email:'',
+                password:''
             })
             
         })
@@ -58,8 +62,9 @@ export default class Login extends Component {
     
     
     render() {
-       if(this.state.redirect) {
-           return <Redirect to='/'></Redirect>
+      console.log(this.state.redirect) 
+        if(this.state.redirect) {
+           return <Redirect to='/dashboard'></Redirect>
        }
        
         return (
@@ -87,17 +92,17 @@ export default class Login extends Component {
                </div>
                <div className='form-group'>
                <label>Email</label>
-              <input type='email' name='email' class='form-control' value={this.state.email} onChange={e=>this.onChangeHandler(e)} placeholder='Your email'></input>
+              <input type='email' name='email' className='form-control' value={this.state.email} onChange={e=>this.onChangeHandler(e)} placeholder='Your email'></input>
               </div>
                <div className='form-group'>
               <label>Password</label>
-               <input type='password' name='password' placeholder='********' class='form-control' value={this.state.password} onChange={this.onChangeHandler}></input>
+               <input type='password' name='password' placeholder='********' className='form-control' value={this.state.password} onChange={this.onChangeHandler}></input>
               </div>
-              <Link to='/dashboard'>Login</Link>
+              <button>Login</button>
 
             </form>
             {this.state.errorMsg} 
-            <p class='mt-2'><small>Not a member yet?<Link to='/signup'>Sign up</Link></small></p>
+            <p className='mt-2'><small>Not a member yet?<Link to='/signup'>Sign up</Link></small></p>
             </div>
            </div>
            </div>
