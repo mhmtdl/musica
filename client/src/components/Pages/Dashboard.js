@@ -9,7 +9,18 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Navbar from '../Navbar';
 
+let imgUrl = '/images/dashboard-7.jpg';
 
+const divStyle = {
+    backgroundImage:'url('+imgUrl+')',
+    backgroundSize:'cover',
+    backgroundAttachment: 'fixed',
+    color: 'white',
+    backgroundRepeat:'no-repeat',
+    padding:'10.5vh'
+    
+    
+}
 
 export default class Dashboard extends Component {
    
@@ -111,7 +122,7 @@ export default class Dashboard extends Component {
             </div> */}
 
            <div>
-            <div>
+            <div style={divStyle}>
             <Searchbar getSearchTerm={this.getSearchTerm}/>
             
            

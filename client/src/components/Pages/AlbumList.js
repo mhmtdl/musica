@@ -4,6 +4,13 @@ import './AlbumList.css'
 //import {Link} from 'react-router-dom';
 import Navbar from '../Navbar';
 
+let imgUrl = '/images/albumlist.jpg';
+
+const divStyle = {
+    backgroundImage:'url('+imgUrl+')',
+    backgroundSize:'cover'
+}
+
 export default class AlbumList extends Component {
    
    state = {
@@ -136,11 +143,11 @@ load = () => {
                 <div className='bas'>
                 <div className='aname'>
 
-                  {album.name}
+                  <h6>{album.name}</h6>
                  </div>
                  <div className='name'>
                  
-                by  {album.artist_name}
+                <h6>by  {album.artist_name}</h6>
                  
                  </div>
                  </div>
@@ -152,10 +159,10 @@ load = () => {
                
                  
                  
-                <div className='albumtracks'>
+                <div className='albumtracks'style={divStyle}>
                  <p>{album.tracks.slice(0,this.state.visiable).map((tx)=>(
                     <div key={tx._id}>
-                    <div>{tx.name}
+                    <div><h6>{tx.name}</h6>
                     <div>
                     <audio 
                                 ref='audio_tag'
@@ -174,7 +181,7 @@ load = () => {
                  </div>
                 
                  
-                <button  type= 'button' onClick={this.load} className=' more-tracks btn btn-sm btn-primary'>More Tracks</button>
+                <button  type= 'button' onClick={this.load} className=' more-tracks'>More Tracks</button>
                 
                 
                 

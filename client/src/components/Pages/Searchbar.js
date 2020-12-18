@@ -1,31 +1,18 @@
 import React, { Component } from 'react'
 //import axios from 'axios';
 // import AuthService from '../services/authService'
- import {Link} from 'react-router-dom';
-//import AuthService from '../../services/authService';
+// import {Link} from 'react-router-dom';
+
  import './Searchbar.css';
 
 
-// const genres = ["lounge", "classical", "electronic", "jazz", "pop", "hiphop", "relaxation", "rock", "songwriter", "world", "metal", "soundtrack"];
+
 
 export default class Searchbar extends Component {
      
 
 
 
-    // service = new AuthService()
-
-    // logout = () => {
-    //     this.service.logout()
-    //     .then(response => {
-    //         console.log(response)
-    //         this.props.getTheUser(null)
-    //     })
-    //     .catch(err => {
-    //         console.log(err)
-
-    //     })
-    // }
     
     state = {
         search:''

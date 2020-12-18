@@ -4,6 +4,7 @@ import AuthService from '../services/authService'
 
 
 
+
 export default class Navbar extends Component {
      
     service = new AuthService()
@@ -27,25 +28,28 @@ export default class Navbar extends Component {
         return (
             <div>
             
-           <nav className="navbar navbar-expand-lg navbar-light bg-light">
+           <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
            <div className='container-fluid'>
-<Link to='/dashboard'>Musica</Link>
+           <h6><Link to='/dashboard'>Musica</Link></h6>
+
 
  
 
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
-  <div className="collapse navbar-collapse " id="navbarNav">
-    <ul className="navbar-nav ml-auto pr-1 ">
+  <div className="collapse navbar-collapse" id="navbarNav">
+    <ul className="navbar-nav ml-auto pr-1">
      
       
-      <li className="nav-item ">
-      <Link to='/albumlist'>Myalbumlist</Link>
+      <li className="nav-item">
+      <h6> <Link to='/albumlist'>Myalbumlist</Link></h6>
+     
       </li>
       
       <li className="nav-item ">
-      <Link to='/' onClick={this.logout}>Logout</Link>
+      <h6><Link to='/' onClick={this.logout}>Logout</Link></h6>
+      
       </li>
       
      

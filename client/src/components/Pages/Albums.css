@@ -4,8 +4,13 @@
 } */
 
 .img {
-  width:38%;
+  width: 38%;
   border-radius: 8px;
+  
+ }
+
+ .albums-container {
+   width:99%;
  }
 
  

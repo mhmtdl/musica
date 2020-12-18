@@ -7,7 +7,13 @@ import Navbar from '../Navbar';
 
 
 
+let imgUrl ='/images/albumdetails.jpg';
 
+const divStyle={
+  backgroundImage:'url('+imgUrl+')',
+  backgroundSize:'cover',
+  //backgroundAttachment:'fixed'
+}
 
 
 
@@ -44,6 +50,8 @@ addPlaylist = (album) => {
         console.log(response)
     })
 }
+
+
 
 
 
@@ -92,7 +100,7 @@ addPlaylist = (album) => {
   <div className='flex-container'>
     <div><img className='album-image' src={this.state.album.image} alt={this.state.album.name}/></div>
     <div className='cont'>
-  <div>{this.state.album.name}<div>
+  <div className='renk'>{this.state.album.name}<div>
   by {this.state.album.artist_name}</div></div>
  
             <div className='button-details'>
@@ -103,14 +111,14 @@ addPlaylist = (album) => {
             
            
   
-  <div className='tracks-container'>
+  <div className='tracks-container' style={divStyle}>
  
   <h6>{ this.state.album.tracks && this.state.album.tracks.map((trc)=>(
                             <div key={trc.id}>
                           
                            
-                            
-                               {trc.name}
+                              <h6>{trc.name}</h6>
+                               
                                <div className='audio'> <audio 
                                 ref='audio_tag'
                                 autoPlay={false}

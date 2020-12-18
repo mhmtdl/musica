@@ -6,6 +6,7 @@ import './Albums.css'
 //import axios from 'axios';
 //import Albumdetails from './Albumdetails'
 
+
 export default class Albums extends Component {
    
    state = {
@@ -50,7 +51,7 @@ export default class Albums extends Component {
                 {/* <div><h6>Independent Albums</h6></div> */}
 
                 
-                <div className='row shadow-lg p-3 mb-5 bg-white rounded' >
+                <div className='row'>
 
                 
                
@@ -77,15 +78,22 @@ export default class Albums extends Component {
                      
                    </div>
                    </div>
+                  
 
                 ))}
+                <div className='col-md-12'>
+            
+            <button type= 'button' onClick={this.loadmore} className='btn btn-sm btn-primary mr-5 bg-dark'>More Albums</button>
+            
+        </div>
+                
             </div>
             <hr/>
-            <div className='col-md-12'>
+            {/* <div className='col-md-12'>
             
                 <button type= 'button' onClick={this.loadmore} className='btn btn-sm btn-primary mr-5'>More Albums</button>
                 
-            </div>
+            </div> */}
            
 
                 
