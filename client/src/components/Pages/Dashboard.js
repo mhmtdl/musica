@@ -6,7 +6,7 @@ import './Dashboard.css';
 import axios from 'axios';
 
 //import Navbar from '../Navbar';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import Navbar from '../Navbar';
 
 let imgUrl = '/images/dashboard-7.jpg';
@@ -17,7 +17,7 @@ const divStyle = {
     backgroundAttachment: 'fixed',
     color: 'white',
     backgroundRepeat:'no-repeat',
-    padding:'10.5vh'
+    padding:'13vh'
     
     
 }
