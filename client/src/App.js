@@ -55,27 +55,26 @@ export default class App extends Component {
    
     return (
       <div className="App">
-         {/* <Navbar getTheUser={this.getTheUser}/>  */}
+        
         <div>
         
 
       <Switch>
 
-        {/* <Route exact  path='/homepage' render={()=> <Navbar getTheUser={this.getTheUser}/>}/> */}
+        
         <Route exact path='/' component={Homepage}/>
         <Route exact path='/signup' component={Signup}/>
         <Route exact path ='/login' render={()=>
         <Login getTheUser={this.getTheUser}/>
         }/>
         <Route exact path='/dashboard' component={Dashboard}/>
-        {/* <Searchbar getSearchTerm={this.getSearchTerm} /> */}
-         {/* <Route exact path='/albums/:id' component={Albumdetails}/> */}
+        
          <Route
             exact
             path="/albums/:id"
             render={(props) => <Albumdetails{...props} loggedInUser={this.state.loggedInUser} />}
           />
-         {/* <Route exact path='/albumlist' component={AlbumList}/> */}
+       
          <Route
             exact
             path="/albumlist"

@@ -37,13 +37,7 @@ export default class AlbumList extends Component {
     })
 }
 
-// componentWillReceiveProps(nextProps) { 
-//     console.log('new props coming', nextProps)
-//      if(this.props.loggedInUser !== nextProps.loggedInUser){
-//         console.log('list') 
-//         this.displaylist()
-//      }
-//     }
+
 
 componentDidMount() {
     this.displaylist()
@@ -58,15 +52,7 @@ load = () => {
     })
 }
 
-//       componentDidMount() {
-//         const playlist= {id:this.props.loggedInUser._id}
-//         axios.get('http://localhost:5000/addplaylist',playlist)
-//        .then(res=>{
-//            console.log(res)
-//            this.setState({album:res.data})
 
-//        })
-//    }
 
 
 
@@ -97,32 +83,7 @@ load = () => {
             <Navbar/>
            
             
-{/* <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-<Link to='/dashboard'>Musica</Link>
 
- 
-
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse " id="navbarNav">
-    <ul className="navbar-nav ml-auto pr-1 ">
-     
-      <li className="nav-item">
-      <Link to='/albumlist'>Myalbumlist</Link>
-      </li>
-      
-      <li className="nav-item ">
-      <Link to='/' onClick={this.logout}>Logout</Link>
-      </li>
-      
-     
-    </ul>
-  </div>
-</nav>
-               
-            </div> */}
 
 
 

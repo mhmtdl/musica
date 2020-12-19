@@ -69,32 +69,7 @@ addPlaylist = (album) => {
   <div>
 
      <Navbar/>
-    {/* <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<Link to='/dashboard'>Musica</Link>
-
- 
-
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse " id="navbarNav">
-    <ul className="navbar-nav ml-auto pr-1 ">
-     
-      <li className="nav-item">
-      <Link to='/albumlist'>Myalbumlist</Link>
-      </li>
-      
-      <li className="nav-item ">
-      <Link to='/' onClick={this.logout}>Logout</Link>
-      </li>
-      
-     
-    </ul>
-  </div>
-</nav>
-               
-            </div> */}
+   
 
   
   <div className='flex-container'>
